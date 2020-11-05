@@ -304,6 +304,25 @@ Como podemos observar, empieza a generarse la imagen del servidor, y posteriorme
 
 ### 7- Reproducir los contenedores creados anteriormente usando un Dockerfile.
 
+El ejercicio se ha realizado como parte del ejercicio anterior. Se ha notificado con un *issue* al profesor.
+
 ### 8- Crear con docker-machine una máquina virtual local que permita desplegar contenedores y ejecutar en él contenedores creados con antelación.
 
+Para configurar **docker-machine** , se instala siguiendo el [manual oficial](https://docs.docker.com/engine/install/ubuntu/) de instalación. Posteriormente creamos una máquina y configuramos el entorno con:
 
+```bash
+docker-machine create --driver virtualbox maquinaCC
+docker-machine ls
+docker-machine env maquinaCC
+$eval (docker-machine env maquinaCC)
+```
+
+![Docker Machine configuration](./img/docker_machine_config.png "Docker Machine configuration")
+
+Para el ejemplo se ha utilizado el servidor creado en el ejercicio 6:
+
+![Docker Run Servidor](./img/docker_run_servidor.png "Docker Run Servidor")
+
+Accedemos a la máquina virtual de docker-machine y comprobamos que funciona:
+
+![Docker Machine Ejemplo](./img/docker_machine_ejemplo.png "Docker Machine Ejemplo")
