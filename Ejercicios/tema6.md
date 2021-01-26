@@ -13,12 +13,6 @@ Una vez instalado, para la composición que se pide, he realizado el procedimien
 sudo podman pod create --name cluster -p 8080:80
 ```
 
-![Podman Cluster](./img/cluster_podman.png "Podman Cluster")
-
-Se pueden ver el cluster con ```sudo podman pod ls```:
-
-![Podman ls](./img/podman_ls.png "Podman ls")
-
 A continuación, se crearán los diferentes contenedores dentro del cluster creado, para ello primero crearemos el contenedor que contenga *MariaDB*:
 
 ```shell
@@ -31,7 +25,7 @@ sudo podman run \
 --name=wptest-db mariadb
 ```
 
-![Podman MariaDB](./img/podman_mariadb.png "Podman MariaDB")
+![Podman Cluster](./img/cluster_podman.png "Podman Cluster")
 
 Una vez definida la BD, se crea entonces el contenedor de *Wordpress* que utiliza dicha BD, para ello se utiliza localhost como host de la BD de *Wordpress*:
 
@@ -50,6 +44,10 @@ sudo podman run \
 Una vez definidos ambos contendores, se puede observar el contenido del cluster con ```sudo podman ps```:
 
 ![Podman PS](./img/podman_ps.png "Podman PS")
+
+Se puede ver el cluster con ```sudo podman pod ls```:
+
+![Podman ls](./img/podman_ls.png "Podman ls")
 
 Por último, accediendo a localhost, podemos ver que efectivamente funciona el cluster y nos lleva a la pantalla de inicio de configuración de *Wordpress*:
 
